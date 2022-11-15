@@ -17,8 +17,7 @@ public class Target : MonoBehaviour
     void Start()
     {
         _targetRB = GetComponent<Rigidbody2D>();
-        _gameManager = GameObject
-
+        _gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         _targetRB.AddForce(Vector2.up * MinSpeed, ForceMode2D.Impulse);
         _targetRB.AddTorque(RandomizeTorque());
     }
@@ -49,10 +48,10 @@ public class Target : MonoBehaviour
     {
         Destroy(this.gameObject);
 
-        if(!other.gameObject.CompareTag("Bad"))
+        if(!gameObject.CompareTag("Bad"))
         {
             //Debug.Log("Game Over");
-            _gameManager.IsGameActive = false;
+            _gameManager.GameOver();
         }
     }
 }
