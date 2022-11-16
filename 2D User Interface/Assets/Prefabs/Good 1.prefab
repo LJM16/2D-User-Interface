@@ -147,6 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PointValue: 5
-  MinSpeed: 20
+  MinSpeed: 5
   MaxSpeed: 20
   MaxTorque: 10
