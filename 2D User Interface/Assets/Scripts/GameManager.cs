@@ -10,10 +10,11 @@ public class GameManager : MonoBehaviour
     public List<GameObject> Target;
     public bool IsGameActive = false;
     public int Score = 0;
+    public float SpawnRate = 1f;
     public TextMeshProUGUI ScoreText;
     public TextMeshProUGUI GameOverText;
-    public TextMeshProUGUI GameTitleText;
-    public Button StartButton;
+    //public TextMeshProUGUI GameTitleText;
+    //public Button StartButton;
     public Button RestartButton;
 
     // Start is called before the first frame update
@@ -24,8 +25,8 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        GameTitleText.gameObject.SetActive(false);
-        StartButton.gameObject.SetActive(false);
+        //GameTitleText.gameObject.SetActive(false);
+        //StartButton.gameObject.SetActive(false);
         ScoreText.gameObject.SetActive(true);
         IsGameActive = true;
          ScoreText.text = "Score: " + Score;
