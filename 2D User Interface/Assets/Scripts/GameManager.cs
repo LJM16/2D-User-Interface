@@ -7,7 +7,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public List<GameObject> Target;
     public bool IsGameActive = false;
     public int Score = 0;
     public float SpawnRate = 1f;
@@ -15,7 +14,10 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI GameOverText;
     //public TextMeshProUGUI GameTitleText;
     //public Button StartButton;
+    public GameObject StartScene;
     public Button RestartButton;
+    public List<GameObject> Target;
+
 
     // Start is called before the first frame update
     void Start()
@@ -23,13 +25,15 @@ public class GameManager : MonoBehaviour
         IsGameActive = false;
     }
 
-    public void StartGame()
+    public void StartGame(int difficulty)
     {
         //GameTitleText.gameObject.SetActive(false);
         //StartButton.gameObject.SetActive(false);
+        StartScene.gameObject.SetActive(false);
         ScoreText.gameObject.SetActive(true);
         IsGameActive = true;
-         ScoreText.text = "Score: " + Score;
+        ScoreText.text = "Score: " + Score;
+        SpawnRate /= difficulty;
         StartCoroutine(SpawnTarget());
     }
 
@@ -57,9 +61,9 @@ public class GameManager : MonoBehaviour
     {
         while(IsGameActive)
         {
-             yield return new WaitForSeconds(1);
-        int index = Random.Range(0, Target.Count);
-        Instantiate(Target[index]);
+            yield return new WaitForSeconds(SpawnRate);
+            int index = Random.Range(0, Target.Count);
+            Instantiate(Target[index]);
         }
     }
 

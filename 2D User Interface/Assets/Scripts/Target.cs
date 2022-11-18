@@ -9,17 +9,18 @@ public class Target : MonoBehaviour
     public float MaxSpeed = 20;
     public float MaxTorque = 10;
 
-    private Rigidbody2D _targetRB;
+    private Rigidbody2D _targetRb;
     private GameManager _gameManager;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        _targetRB = GetComponent<Rigidbody2D>();
+        _targetRb = GetComponent<Rigidbody2D>();
         _gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        _targetRB.AddForce(Vector2.up * MinSpeed, ForceMode2D.Impulse);
-        _targetRB.AddTorque(RandomizeTorque());
+
+         _targetRb.AddForce(Vector2.up * RandomizeForce(), ForceMode2D.Impulse);
+        _targetRb.AddTorque(RandomizeTorque());
     }
 
     // Update is called once per frame

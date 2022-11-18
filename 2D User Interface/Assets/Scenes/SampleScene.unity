@@ -420,7 +420,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.13618708, y: 0}
@@ -1188,18 +1188,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c35a760fdf2d0d94b8d9d40ebbb71311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsGameActive: 1
+  Score: 0
+  SpawnRate: 1
+  ScoreText: {fileID: 142650898}
+  GameOverText: {fileID: 522690384}
+  StartScene: {fileID: 981975161}
+  RestartButton: {fileID: 1616498201}
   Target:
   - {fileID: 3696677965814136244, guid: 09254c0b7a07b0c4d87e4daf52a83cb8, type: 3}
   - {fileID: 1324026700312221047, guid: 652c2a7fb79e25343be2a8031382e170, type: 3}
   - {fileID: 8951756309769297744, guid: edfdbeacc92de2342bc7346aa4c34f68, type: 3}
   - {fileID: 3065058505879580286, guid: 9fb5a454f0c6c454ba8b87031355835a, type: 3}
   - {fileID: 2736709770343610346, guid: 3d0f69ca36a2bc34dbec2441ef44701e, type: 3}
-  IsGameActive: 1
-  Score: 0
-  SpawnRate: 1
-  ScoreText: {fileID: 142650898}
-  GameOverText: {fileID: 522690384}
-  RestartButton: {fileID: 1616498201}
 --- !u!4 &886465709
 Transform:
   m_ObjectHideFlags: 0
@@ -1593,7 +1594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc5c2ec37797ae4a91a960b71b69093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DifficultyAmount: 0
+  DifficultyAmount: 2
 --- !u!1 &1298434201
 GameObject:
   m_ObjectHideFlags: 0
@@ -1729,7 +1730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc5c2ec37797ae4a91a960b71b69093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DifficultyAmount: 0
+  DifficultyAmount: 1
 --- !u!1 &1616498199
 GameObject:
   m_ObjectHideFlags: 0
@@ -1999,7 +2000,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc5c2ec37797ae4a91a960b71b69093, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DifficultyAmount: 0
+  DifficultyAmount: 3
 --- !u!1 &1749612553
 GameObject:
   m_ObjectHideFlags: 0
